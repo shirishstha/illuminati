@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+<link rel="stylesheet" href="design.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="#" href="#">COllEGE<div class=logo>hub</div> </a>
+         <ul class="menu-links"> 
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+          <li><a href="contactus.html">Contact us</a></li>
+        </ul>
+        
+      </nav>
+    </header>
+    <img class="background_img" src="Materials/background.jpg">
+    
+
+   
+
+
+  <div id="slider-container">
+    <div id="image-slider">
+      <div class="slide"><img src="Materials/slide1.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="Materials/slide2.jpg" alt="Image 2"></div>
+      <div class="slide"><img src="Materials/slide4.jpg" alt="Image 3"></div>
+      <div class="slide"><img src="Materials/slide6.jpg" alt="Image 3"></div>
+      <div class="slide"><img src="Materials/slide7.jpg" alt="Image 3"></div>
+    </div>
+
+    <div id="slider-control">
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      const slider = document.getElementById('image-slider');
+      const slideWidth = document.querySelector('.slide').offsetWidth;
+      const newPosition = -index * slideWidth;
+
+      slider.style.transform = `translateX(${newPosition}px)`;
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + document.querySelectorAll('.slide').length) % document.querySelectorAll('.slide').length;
+      showSlide(currentIndex);
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % document.querySelectorAll('.slide').length;
+      showSlide(currentIndex);
+    }
+  </script>
+
+<section class="content">
+  <h1>Enroll in your dream college</h1><br>
+  <div class="gobtn">
+  <a href="course.html"><input class="gobtn" type="button" value="Let's Go"></a>
+   </div>
+</section>
+
+
+<footer>
+  <div class="footer">
+    <div class="main">
+      <div class="footer-section about">
+        <h2>About Us</h2>
+        <p>CollegeHub provides details about various college in nepal</p>
+      </div>
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="https://tu.edu.np/">Tribhuwan University</a></li>
+          <li><a href="https://www.collegesnepal.com/">College Nepal</a></li>
+          <li><a href="https://edusanjal.com/">Edusanjal</a></li>
+        </ul>
+      </div>
+      <div class="footer-section link">
+        <h2>Contact Us</h2>
+        <ul>
+        <li><img  src="facebook.png" width="10px" height="10px">
+        <a href="https://www.facebook.com/sirishstha123">Facebook</a></li>
+        <li><img  src="instagram.png"  width="10px" height="10px">
+        <a href="https://www.instagram.com/its_me_satkrit/">Instagram</a></li>
+        <li><img  src="gmail.png"  width="10px" height="10px">
+        <a href="https://mail.google.com/mail/u/1/#inbox">Gmail</a></li>
+      </ul>
+      </div>
+    </div> 
+    <div class="copyright">
+      &copy; 2023 CollegeHub | All rights reserved.
+    </div>
+  </div>
+
+</footer>
+    
+ 
+
+
+
+  
+</body>
+</html>
